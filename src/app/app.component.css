@@ -1,3 +1,27 @@
-p {
-  font-family: Lato;
+
+.row-label, .column-label {
+  font: 13px sans-serif;
+}
+
+#matrix-tooltip {
+  font: bold 13px sans-serif;
+  max-width: 350px;
+  color: white;
+  background: #222;
+  opacity: 0.7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 9999;
+}
+
+#matrix-tooltip ul {
+  font-weight: normal;
+  margin: 5px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#matrix-tooltip li:before {
+  content: none;
 }
