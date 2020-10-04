@@ -69,6 +69,8 @@ export class AppComponent implements OnInit {
       b
     );
 
+    console.log(corpus)
+
     similarity = new Similarity(corpus);
     matrix = similarity.getDistanceMatrix();
     extendedMatrix = merge(matrix.matrix).filter(d => d > 0.01);
@@ -110,7 +112,7 @@ export class AppComponent implements OnInit {
       const state2 = matrix.identifiers[d.column];
 
       const commonTerms = corpus
-        .getCommonTerms(state1, state2, 5)
+        .getCommonTerms(state1, state2, 10)
         .map(d => `<li>${d[0]}</li>`)
         .join("");
 
@@ -157,8 +159,9 @@ export class AppComponent implements OnInit {
       .attr("x", margin.topAndLeft - 5)
       .attr("y", d => scale(d) + scale.bandwidth() / 2)
       .text(d => d)
-      .attr("dy", "0.35em")
+      .attr("dy", "1.0em")
       .attr("text-anchor", "end");
+      // .attr("dy", "0.35em")
 
     svg
       .append("g")
@@ -170,7 +173,8 @@ export class AppComponent implements OnInit {
       .attr("x", 5)
       .attr("y", d => scale(d) + scale.bandwidth() / 2)
       .text(d => d)
-      .attr("dy", "0.35em");
+      .attr("dy", "1.0em");
+      // .attr("dy", "0.35em");
 
     div.node();
 

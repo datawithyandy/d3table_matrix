@@ -1,10 +1,10 @@
 
 .row-label, .column-label {
-  font: 13px sans-serif;
+  font: 13px Roboto;
 }
 
 #matrix-tooltip {
-  font: bold 13px sans-serif;
+  font: bold 13px Roboto;
   max-width: 350px;
   color: white;
   background: #222;
